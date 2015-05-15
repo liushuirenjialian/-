@@ -14,7 +14,7 @@ $(document).ready(function() {
       data.posts.forEach(function(post) {
         posts += '<li><a href="article.html?postId='+post.id+'">' + post.title + '</a></li>';
       })
-      document.getElementById("posts").innerHTML = posts;
+      document.getElementById("news_quick").innerHTML = posts;
     }
   })
 

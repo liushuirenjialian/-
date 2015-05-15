@@ -731,9 +731,9 @@ body {
 
 .code {
   width: 260px;
-  height: 543px;
+  /*height: 543px;*/
   position: fixed;
-  top: 50%;
+  top: 35%;
   margin-top: -275px;
   right: 0;
   z-index: 99;
@@ -766,4 +766,10 @@ body {
 
 .news_quick{
   list-style: none;
+}
+
+.game_short a{
+ width: 231px;
+ float: left;
+ padding-bottom: 5px;
 }

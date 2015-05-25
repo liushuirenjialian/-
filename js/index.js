@@ -1,15 +1,39 @@
 var getPostsUrl =
-  "http://games.hoolai.com/cms/?json=get_category_posts&slug=lianshen&include=title,date&callback=hahaha";
+  "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_news&include=title,date&callback=hahaha";
+
+var luntanredianUrl =
+  "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_luntanredian&include=content&callback=hahaha";
 
 $(document).ready(function() {
   slide(".banner1", "#banner-side1", ".side-banner1");
   slide(".banner2", "#banner-side2", ".side-banner2");
 
+  request(luntanredianUrl, function(err, data) {
+    if (err) {
+      console.log(err)
+    } else {
+      var posts = '';
+      var arg = data.posts[0].content.split("\n");
+      var _arg = [];
+      for(var i = 1; i< arg.length; i++){
+        if (!!arg[i]) {
+          _arg.push(arg[i])
+        }
+      }
+      _arg.forEach(function(str) {
+        var _str = str.substr(3);
+        var __str = _str.substr(0,_str.length-4)
+        var redianArg = __str.split('|')
+        posts += '<li><a target="_blank" href="'+redianArg[2]+'">' + redianArg[1] + '</a></li>';
+      })
+      document.getElementById("luntanredian").innerHTML = posts;
+    }
+  })
+
   request(getPostsUrl, function(err, data) {
     if (err) {
       console.log(err)
     } else {
-      console.log(data.posts)
       var posts = '';
       data.posts.forEach(function(post) {
         posts += '<li><a href="article.html?postId='+post.id+'">' + post.title + '</a></li>';

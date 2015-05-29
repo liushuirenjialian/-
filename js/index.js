@@ -4,9 +4,24 @@ var getPostsUrl =
 var luntanredianUrl =
   "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_luntanredian&include=content&callback=hahaha";
 
+var gonglueziliaoUrl =
+  "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_gonglueziliao&include=title,date&callback=hahaha";
+
 $(document).ready(function() {
   slide(".banner1", "#banner-side1", ".side-banner1");
   slide(".banner2", "#banner-side2", ".side-banner2");
+
+  request(gonglueziliaoUrl, function(err, data) {
+    if (err) {
+      console.log(err)
+    } else {
+      var posts = '';
+      data.posts.forEach(function(post) {
+        posts += '<li><a href="article.html?tag=gonglueziliao&postId='+post.id+'">' + post.title + '</a></li>';
+      })
+      document.getElementById("gonglueziliao").innerHTML = posts;
+    }
+  })
 
   request(luntanredianUrl, function(err, data) {
     if (err) {
@@ -36,7 +51,7 @@ $(document).ready(function() {
     } else {
       var posts = '';
       data.posts.forEach(function(post) {
-        posts += '<li><a href="article.html?postId='+post.id+'">' + post.title + '</a></li>';
+        posts += '<li><a href="article.html?tag=news&postId='+post.id+'">' + post.title + '</a></li>';
       })
       document.getElementById("news_quick").innerHTML = posts;
     }

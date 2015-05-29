@@ -94,7 +94,16 @@ var main =  function() {
   var qstr = getQueryStringArgs(searchStr);
   var requestUrl = 'http://games.hoolai.com/cms/?json=get_post&id='+ qstr["postId"]+'&callback=hahaha';
   showPost(requestUrl);
-  var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=lianshen&order_by=date&include=title&callback=hahaha';
+  var tag = qstr["tag"];
+  if (tag === 'gonglueziliao') {
+    var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_gonglueziliao&order_by=date&include=title&callback=hahaha';
+    $('.nav-tactic').siblings().children().removeClass("active");
+    $('.nav-tactic a').addClass("active");
+  }else if (tag === 'news') {
+    var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_news&order_by=date&include=title&callback=hahaha';
+    $('.nav-news').siblings().children().removeClass("active");
+    $('.nav-news a').addClass("active");
+  }
   showContext(getContextUrl, qstr["postId"]);
 }
 main();

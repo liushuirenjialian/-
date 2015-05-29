@@ -384,6 +384,14 @@ hr.hr-sm {
   *zoom: 1;
 }
 
+.panel-body .article img{
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-top: none;
+  *zoom: 1;
+}
+
 .panel-body:before,
 .panel-body:after {
   content: " ";

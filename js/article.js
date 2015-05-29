@@ -78,11 +78,11 @@ function showContext(url, postId){
       }
       if(!!res.posts[i-1]){
         var frontPost = res.posts[i-1];
-        posts += '<li><a href="article.html?postId='+frontPost.id+'">' + frontPost.title + '</a></li>';
+        posts += '<li><a href="article.html?tag='+window.tag+'&postId='+frontPost.id+'">' + frontPost.title + '</a></li>';
       }
       if(!!res.posts[i+1]){
         var backPost = res.posts[i+1];
-        posts += '<li><a href="article.html?postId='+backPost.id+'">' + backPost.title + '</a></li>';
+        posts += '<li><a href="article.html?tag='+window.tag+'&postId='+backPost.id+'">' + backPost.title + '</a></li>';
       }
       document.getElementById("post-context").innerHTML = posts;
     }
@@ -95,14 +95,17 @@ var main =  function() {
   var requestUrl = 'http://games.hoolai.com/cms/?json=get_post&id='+ qstr["postId"]+'&callback=hahaha';
   showPost(requestUrl);
   var tag = qstr["tag"];
+  window.tag = tag;
   if (tag === 'gonglueziliao') {
     var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_gonglueziliao&order_by=date&include=title&callback=hahaha';
     $('.nav-tactic').siblings().children().removeClass("active");
     $('.nav-tactic a').addClass("active");
+    $('#page-head').text('游戏攻略');
   }else if (tag === 'news') {
     var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_news&order_by=date&include=title&callback=hahaha';
     $('.nav-news').siblings().children().removeClass("active");
     $('.nav-news a').addClass("active");
+    $('#page-head').text('游戏资讯');
   }
   showContext(getContextUrl, qstr["postId"]);
 }

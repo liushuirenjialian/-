@@ -1,6 +1,34 @@
 var getPostsUrl =
   "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_news&include=title,date&callback=hahaha";
 
+function getQueryStringArgs(_qs) {
+  var qs = _qs.length > 0 ? _qs.substring(1) : "",
+    args = {}, //存放所有查询字符串参数对
+    items = qs.split("&"),
+    len = items.length,
+    name = null,
+    value = null;
+  if (qs.length == 0) {
+    console.log("没有查询字符串");
+    return;
+  };
+  for (var i = 0; i < len; i++) {
+    item = items[i].split("=");
+    name = decodeURIComponent(item[0]);
+    value = decodeURIComponent(item[1]);
+    args[name] = value;
+  }
+  return args;
+}
+
+var main =  function() {
+  var searchStr = window.location.search;
+  var qstr = getQueryStringArgs(searchStr);
+  var tag = qstr["tag"];
+  window.tag = tag;
+}
+main();
+
 $(document).ready(function() {
 
   request(getPostsUrl, function(err, data) {
@@ -9,7 +37,7 @@ $(document).ready(function() {
     } else {
       var posts = '';
       data.posts.forEach(function(post) {
-        posts += '<li><a href="article.html?postId='+post.id+'">' + post.title + '</a></li>';
+        posts += '<li><a href="article.html?tag='+window.tag+'&postId='+post.id+'">' + post.title + '</a></li>';
       })
       document.getElementById("post-context").innerHTML = posts;
     }

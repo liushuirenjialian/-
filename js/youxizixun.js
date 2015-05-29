@@ -7,7 +7,8 @@ function getQueryStringArgs(_qs) {
     items = qs.split("&"),
     len = items.length,
     name = null,
-    value = null;
+    value = null,
+    item = [];
   if (qs.length == 0) {
     console.log("没有查询字符串");
     return;
@@ -21,15 +22,16 @@ function getQueryStringArgs(_qs) {
   return args;
 }
 
-var main =  function() {
-  var searchStr = window.location.search;
-  var qstr = getQueryStringArgs(searchStr);
-  var tag = qstr["tag"];
-  window.tag = tag;
-}
-main();
-
 $(document).ready(function() {
+
+  var main = function() {
+    var searchStr = window.location.search;
+    var qstr = getQueryStringArgs(searchStr);
+    var tag = qstr["tag"];
+    console.log(tag);
+    window.tag = tag;
+  }
+  main();
 
   request(getPostsUrl, function(err, data) {
     if (err) {
@@ -37,7 +39,7 @@ $(document).ready(function() {
     } else {
       var posts = '';
       data.posts.forEach(function(post) {
-        posts += '<li><a href="article.html?tag='+window.tag+'&postId='+post.id+'">' + post.title + '</a></li>';
+        posts += '<li><a href="article.html?tag=' + window.tag + '&postId=' + post.id + '">' + post.title + '</a></li>';
       })
       document.getElementById("post-context").innerHTML = posts;
     }

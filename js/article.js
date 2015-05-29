@@ -4,13 +4,16 @@ function getQueryStringArgs(_qs) {
     items = qs.split("&"),
     len = items.length,
     name = null,
-    value = null;
+    value = null,
+    item = [];
   if (qs.length == 0) {
     console.log("没有查询字符串");
     return;
   };
   for (var i = 0; i < len; i++) {
     item = items[i].split("=");
+    name = item[0];
+    value = item[1];
     name = decodeURIComponent(item[0]);
     value = decodeURIComponent(item[1]);
     args[name] = value;

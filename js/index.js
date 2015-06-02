@@ -16,8 +16,9 @@ $(document).ready(function() {
       console.log(err)
     } else {
       var posts = '';
-      data.posts.forEach(function(post) {
-        posts += '<li><a href="article.html?tag=gonglueziliao&postId='+post.id+'">' + post.title + '</a></li>';
+      var _data = top3(data.posts);
+      _data.forEach(function(post) {
+        posts += '<li><a href="article.html?tag=gonglueziliao&postId=' + post.id + '">' + post.title + '</a></li>';
       })
       document.getElementById("gonglueziliao").innerHTML = posts;
     }
@@ -30,16 +31,17 @@ $(document).ready(function() {
       var posts = '';
       var arg = data.posts[0].content.split("\n");
       var _arg = [];
-      for(var i = 1; i< arg.length; i++){
+      for (var i = 1; i < arg.length; i++) {
         if (!!arg[i]) {
           _arg.push(arg[i])
         }
       }
-      _arg.forEach(function(str) {
+      var __arg = top3(_arg);
+      __arg.forEach(function(str) {
         var _str = str.substr(3);
-        var __str = _str.substr(0,_str.length-4)
+        var __str = _str.substr(0, _str.length - 4)
         var redianArg = __str.split('|')
-        posts += '<li><a target="_blank" href="'+redianArg[2]+'">' + redianArg[1] + '</a></li>';
+        posts += '<li><a target="_blank" href="' + redianArg[2] + '">' + redianArg[1] + '</a></li>';
       })
       document.getElementById("luntanredian").innerHTML = posts;
     }
@@ -50,8 +52,9 @@ $(document).ready(function() {
       console.log(err)
     } else {
       var posts = '';
-      data.posts.forEach(function(post) {
-        posts += '<li><a href="article.html?tag=news&postId='+post.id+'">' + post.title + '</a></li>';
+      var _data = top3(data.posts);
+      _data.forEach(function(post) {
+        posts += '<li><a href="article.html?tag=news&postId=' + post.id + '">' + post.title + '</a></li>';
       })
       document.getElementById("news_quick").innerHTML = posts;
     }
@@ -72,16 +75,16 @@ $(document).ready(function() {
   })
 })
 
-$(function(){
-	$.easy.navigation();
-$.easy.tooltip();
-$.easy.popup();
-$.easy.external();
-$.easy.rotate();
-$.easy.cycle();
-$.easy.forms();
-$.easy.showhide();
-$.easy.jump();
+$(function() {
+  $.easy.navigation();
+  $.easy.tooltip();
+  $.easy.popup();
+  $.easy.external();
+  $.easy.rotate();
+  $.easy.cycle();
+  $.easy.forms();
+  $.easy.showhide();
+  $.easy.jump();
 });
 
 function request(url, cal) {
@@ -98,7 +101,7 @@ function request(url, cal) {
   });
 }
 
-function slide(banner, bannerSide, sideBanner){
+function slide(banner, bannerSide, sideBanner) {
   var runState1 = true;
   var indexPage1 = 0;
   var interval1 = null;
@@ -123,29 +126,29 @@ function slide(banner, bannerSide, sideBanner){
       loaded: function(number) {
         interval1 = addInterval(5000)
       },
-      start: function(number) {
-      },
+      start: function(number) {},
       complete: function(number) {
         indexPage1 = number - 1;
-        if(runState1){
-          changeSide(bannerSide,number-1)
+        if (runState1) {
+          changeSide(bannerSide, number - 1)
         }
       }
     }
   });
-  function addInterval(time){
-    return window.setInterval(function(){
+
+  function addInterval(time) {
+    return window.setInterval(function() {
       next(banner)
-    },time)
+    }, time)
   }
 
-  $(bannerSide+' a').on('mouseover', function() {
+  $(bannerSide + ' a').on('mouseover', function() {
     var index = $(this).closest('li').index();
     var $outer = $(this).closest('.side-banner');
     $outer.find('.banner-side a').removeClass('active');
     $(this).addClass('active');
     indexPage1 = index;
-    $outer.find(banner+' .slidesjs-pagination-item a').eq(index).click();
+    $outer.find(banner + ' .slidesjs-pagination-item a').eq(index).click();
   });
 
   $(sideBanner).on('mouseenter', function() {
@@ -158,9 +161,9 @@ function slide(banner, bannerSide, sideBanner){
   })
 
   function next(outer) {
-      if (runState1) {
-        $(outer + " .slidesjs-next").click();
-      }
+    if (runState1) {
+      $(outer + " .slidesjs-next").click();
+    }
   }
 
   function changeSide(outerId, index) {
@@ -168,4 +171,19 @@ function slide(banner, bannerSide, sideBanner){
     $(outerId + ' li:eq(' + index + ') a').addClass('active');
   }
 
+}
+
+
+function top3(array) {
+  var top3Array = [];
+  if (array.length < 3) {
+    for (var i = 0; i < array.length; i++) {
+      top3Array.push(array[i]);
+    }
+  } else {
+    for (var i = 0; i < 3; i++) {
+      top3Array.push(array[i]);
+    }
+  }
+  return top3Array;
 }

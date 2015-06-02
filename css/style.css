@@ -384,7 +384,7 @@ hr.hr-sm {
   *zoom: 1;
 }
 
-.panel-body .article img{
+.panel-body .article img {
   width: 100%;
   height: auto;
   border: 1px solid #ddd;
@@ -778,12 +778,34 @@ body {
   list-style: none;
 }
 
-.game_short a img{
+.game_short a img {
   width: 228px;
   /*height: 140px;*/
+  
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
   float: left;
   padding: 5px 1px;
+}
+
+.activity a img {
+  width: 180px;
+  height: auto;
+}
+
+.gift ul {
+  text-align: center;
+}
+
+.gift ul span {
+  font-size: 3rem;
+}
+
+.gift .panel-body{
+  padding:19px;
+}
+
+.side-banner2 .banner2{
+  height: 360px;
 }

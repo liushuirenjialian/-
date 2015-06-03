@@ -7,6 +7,15 @@ var luntanredianUrl =
 var gonglueziliaoUrl =
   "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_gonglueziliao&include=title,date&callback=hahaha";
 
+var youxilianjie =
+  "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_youxilianjie&include=content&callback=hahaha";
+
+var youqinglianjie =
+  "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_youqinglianjie&include=content&callback=hahaha";
+
+var youxixiazai =
+  "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_youxixiazai&include=content&callback=hahaha";
+
 $(document).ready(function() {
   slide(".banner1", "#banner-side1", ".side-banner1");
   slide(".banner2", "#banner-side2", ".side-banner2");
@@ -60,6 +69,84 @@ $(document).ready(function() {
     }
   })
 
+  request(youxilianjie, function(err, data) {
+    if (err) {
+      console.log(err)
+    } else {
+      var posts = '';
+      var arg = data.posts[0].content.split("\n");
+      var _arg = [];
+      for (var i = 1; i < arg.length; i++) {
+        if (!!arg[i]) {
+          _arg.push(arg[i])
+        }
+      }
+      _arg.forEach(function(str) {
+        var _str = str.substr(3);
+        var __str = _str.substr(0, _str.length - 4)
+        var redianArg = __str.split('|')
+        posts += '<li><a target="_blank" href="' + redianArg[2] + '">' + redianArg[1] + '</a></li>';
+      })
+      document.getElementById("youxilianjie").innerHTML = posts;
+    }
+  })
+
+  request(youqinglianjie, function(err, data) {
+    if (err) {
+      console.log(err)
+    } else {
+      var posts = '';
+      var arg = data.posts[0].content.split("\n");
+      var _arg = [];
+      for (var i = 1; i < arg.length; i++) {
+        if (!!arg[i]) {
+          _arg.push(arg[i])
+        }
+      }
+      _arg.forEach(function(str) {
+        var _str = str.substr(3);
+        var __str = _str.substr(0, _str.length - 4)
+        var redianArg = __str.split('|')
+        posts += '<li><a target="_blank" href="' + redianArg[2] + '">' + redianArg[1] + '</a></li>';
+      })
+      document.getElementById("youqinglianjie").innerHTML = posts;
+    }
+  })
+
+  request(youxixiazai, function(err, data) {
+    if (err) {
+      console.log(err)
+    } else {
+      var posts = '';
+      var arg = data.posts[0].content.split("\n");
+      var _arg = [];
+      for (var i = 1; i < arg.length; i++) {
+        if (!!arg[i]) {
+          _arg.push(arg[i])
+        }
+      }
+      _arg.forEach(function(str,index) {
+        var _str = str.substr(3);
+        var __str = _str.substr(0, _str.length - 4)
+        var redianArg = __str.split('|');
+        var tag = redianArg[1];
+        if (tag === "android") {
+          $('.download .download_android').attr("href",redianArg[2]);
+        }else if (tag === "ios") {
+          $('.download .download_ios').attr("href",redianArg[2]);
+        }else if (tag === "ios_2") {
+          $('.download .download_ios_2').attr("href",redianArg[2]);
+        }else if (tag === "ms") {
+          $('.download .download_ms').attr("href",redianArg[2]);
+        }else if (tag === "ios_QR") {
+          $('.download .QR_ios').attr("src",redianArg[2]);
+        }else if (tag === "android_QR") {
+          $('.download .QR_android').attr("src",redianArg[2]);
+        };
+      })
+    }
+  })
+
   $("#close").on('click', function() {
     var downloadBlock = $(".downloadBlock");
     if (downloadBlock.css("right") === "-240px") {
@@ -76,15 +163,15 @@ $(document).ready(function() {
 })
 
 $(function() {
-  $.easy.navigation();
-  $.easy.tooltip();
+  // $.easy.navigation();
+  // $.easy.tooltip();
   $.easy.popup();
-  $.easy.external();
-  $.easy.rotate();
-  $.easy.cycle();
-  $.easy.forms();
-  $.easy.showhide();
-  $.easy.jump();
+  // $.easy.external();
+  // $.easy.rotate();
+  // $.easy.cycle();
+  // $.easy.forms();
+  // $.easy.showhide();
+  // $.easy.jump();
 });
 
 function request(url, cal) {

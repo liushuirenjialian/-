@@ -80,3 +80,18 @@ body {
     height: 184px;
 
   }
+ .side-banner .banner-side1 .ul1{
+  height: 290px;
+}
+/* .posts li
+{
+  border-bottom: 1px dotted #000;
+}
+.li-s
+{
+  border-bottom: 1px dotted #000;
+}*/
+.panel-body li
+{
+  border-bottom: 1px solid #e7e2dc;
+}

@@ -77,7 +77,7 @@ button[disabled] {
 }
 
 a {
-  color: #e84e03;
+  color: #000;
   outline: none;
   text-decoration: none;
 }
@@ -665,7 +665,7 @@ body {
 
 .side-banner1 .banner-side a {
   display: block;
-  height: 39px;
+  height: 60px;
   border-bottom: 1px solid #0b0e18;
   padding: 10px 10px;
   font-size: 14px;
@@ -798,9 +798,9 @@ body {
   height: auto;
 }
 
-.gift ul {
+/*.gift ul {
   text-align: center;
-}
+}*/
 
 .gift ul span {
   font-size: 3rem;

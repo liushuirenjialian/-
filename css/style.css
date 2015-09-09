@@ -319,7 +319,7 @@ hr.hr-sm {
 }
 
 .row {
-  margin-left: -10px;
+  margin-left: -13px;
   *zoom: 1;
 }
 
@@ -358,6 +358,9 @@ hr.hr-sm {
 
 .w770 {
   width: 770px;
+  border-width: 1px;
+  border-style: inset;
+  border-color: #383838;
 }
 /*========================================================================
   Panel
@@ -768,10 +771,11 @@ body {
 }
 
 .download {
+  height: 650px;
   margin: 22px 0 22px 22px;
   padding: 22px 0 22px 22px;
-  background: rgba(236, 251, 255, 0.4);
-  box-shadow: -5px 2px 15px rgba(255, 255, 255, 1) inset;
+  background: rgba(28, 31, 43, 0.46);
+ /* box-shadow: -5px 2px 15px rgba(255, 255, 255, 1) inset;*/
 }
 
 .news_quick {

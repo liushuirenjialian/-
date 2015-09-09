@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>炼神</title>
+  <link rel="stylesheet" type="text/css" href="css/list.css"></li>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.slides.js"></script>
@@ -74,7 +75,7 @@
             </div>
             <div class="panel-body">
               <ul id="posts">
-                <span>新手礼包</span>
+                <span>新手礼包%</span>
               </ul>
             </div>
           </div>
@@ -181,7 +182,7 @@
           <h3 class="panel-title">友情链接</h3>
         </div>
         <div class="panel-body">
-        <ul id="youqinglianjie"></ul>
+        <ul id="youqinglianjie"></lu>
         </div>
       </div>
     </div>
@@ -193,16 +194,24 @@
   </div>
   <div class="code" id="code">
     <div class="downloadBlock">
-      <div class="close" id="close">
-      </div>
+      <!-- <div class="close" id="close">
+      </div> -->
       <div class="download">
         <div>
-          <a class="download_android" href="javascript:;" onclick="sl('block',2)"><img src="./img/download/code1.png"></a>
-          <a class="download_ios" href="https://itunes.apple.com/cn/app/dao-ta-chuan-qi-dong-zuo-ka/id793077082?ls=1&amp;mt=8"><img src="./img/download/code2.jpg"></a>
-          <a class="download_ios_2" href="http://cdn.longtugame.com/channel_bin/530006/ipa/3.2.1/530006_612.ipa"><img src="./img/download/code3.jpg"></a>
-          <a class="download_ms" href="javascript:;" onclick="sl('block',1)"><img src="./img/download/code4.jpg"></a>
+          <a class="download_android" href="javascript:;" onclick="sl('block',2)">
+          <img src="./img/download/code1.png">
+          </a>
+          <a class="download_ios" href="https://itunes.apple.com/cn/app/dao-ta-chuan-qi-dong-zuo-ka/id793077082?ls=1&amp;mt=8">
+          <img src="./img/download/code2.jpg">
+          </a>
+          <a class="download_ios_2" href="http://cdn.longtugame.com/channel_bin/530006/ipa/3.2.1/530006_612.ipa">
+          <img src="./img/download/code3.jpg">
+          </a>
+          <a class="download_ms" href="javascript:;" onclick="sl('block',1)">
+          <img src="./img/download/code4.jpg">
+          </a>
         </div>
-        <div class="tex">
+    <!--       <div class="tex">
           iOS正版下载
         </div>
         <div class="codeimg">
@@ -213,7 +222,27 @@
         </div>
         <div class="codeimg">
           <img class="QR_android" src="./img/download/30-140GG44553G6.png">
-        </div>
+        </div> -->
+    
+      <ul class="tabs">
+       <li>
+         <input type="radio" name="tabs" id="tab1" checked/>
+          <label for="tab1">安卓</label>
+          <div id="tab-content" class="tab-content">
+            <p class="erweima-andrio"></p>
+          </div>
+       </li>
+       <li>
+         <input type="radio" name="tabs" id="tab2"/>
+           <label for="tab2">
+             iOS
+           </label>
+           <div id="tab-content2" class="tab-content">
+             <p class="erweima-ios"></p>
+           </div>
+       </li>
+      </ul>
+    
       </div>
     </div>
   </div>

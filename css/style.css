@@ -704,7 +704,7 @@ body {
 
 .side-banner2 .banner-side a {
   display: block;
-  height: 23px;
+  height: 38px;
   padding: 10px;
   font-size: 14px;
   color: #6c6f80;
@@ -717,7 +717,7 @@ body {
 .side-banner2 .banner-side a.active {
   position: relative;
   z-index: 10;
-  width: 174px;
+  width: 190px;
   color: #fff;
   background: url(../img/side-banner2-active-bg.png) no-repeat;
 }

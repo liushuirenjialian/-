@@ -80,6 +80,13 @@ body {
     height: 184px;
 
   }
+  .erweima-ios
+  {
+    background: url(../img/download/30-140GG44553G6.png) no-repeat;
+    width: 184px;
+    height: 184px;
+ text-indent: -9999px;
+  }
  .side-banner .banner-side1 .ul1{
   height: 290px;
 }

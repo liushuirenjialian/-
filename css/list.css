@@ -156,3 +156,22 @@ body {
   background: url(http://www.9game.cn/public/images/pc/xx/play.png) no-repeat center center;
   background-color:rgba(0,0,0,0.5);
 }
+.y_vid
+{
+  position: fixed;
+  top: 142px;
+  z-index: 10000;
+  left: 50%;
+  margin-left: -350px;
+}
+.y_vid .close_video
+{
+  width: 34px;
+  height: 37px;
+  display: block;
+  background: transparent url(../img/images/btn_close.gif) no-repeat scroll 0 0;
+  position: absolute;
+  right: -34px;
+  top: 0;
+  text-align: -9999px;
+}

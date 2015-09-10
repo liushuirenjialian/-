@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.slides.js"></script>
+  <script type="text/javascript" src="js/swfobject.js.js" ></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
           <div class="side-banner side-banner1">
             <div id="banner-side1" class="banner-side">
               <ul>
-                <li class="ul1"> <a class="active" href="#">无尽炼神路，悠悠三世情 </a></li>
+                <li class="ul1"> <a class="active" href="article.html?tag=ad&postId=4992">无尽炼神路，悠悠三世情 </a></li>
                 <li class="ul1"><a href="#">无兄弟，不炼神 </a></li>
                 <li class="ul1"><a href="#">我的神兽我做主 </a></li>
                 <li class="ul1"><a href="#">肉身苦修百战坚 元神变身千人斩 </a></li>
@@ -151,16 +152,16 @@
                <iframe height="100" width="250" style="z-index:1000;" src="http://player.youku.com/embed/XOTU5OTc3Mjg0" frameborder=0 allowfullscreen></iframe> -->
                <ul>
                  <li>
-                   <a href="http://player.youku.com/embed/XOTU5OTc3Mjg0" class="vid" title="炼神2">
+                   <a href="javascript:;" class="vid" title="炼神2">
                    <img src="http://image.game.uc.cn/2015/1/7/10166028.jpg" width="228" height="148" alt="炼神副本视频">
                    <span class="info">炼神</span>
                    <span class="play"></span>
                    </a>
                  </li>
                    <li>
-                   <a href="http://player.youku.com/embed/XOTU5OTc3Mjg0" class="vid" title="炼神2">
+                   <a href="#" class="vid" title="炼神2">
                    <img src="http://image.game.uc.cn/2015/1/7/10166028.jpg" width="228" height="148" alt="炼神2副本视频">
-                   <span class="info">炼神2de</span>
+                   <span class="info">炼神2</span>
                    <span class="play"></span>
                    </a>
                  </li>
@@ -279,6 +280,21 @@
       </div>
     </div>
   </div>
+
+    <div class="y_vid" style="display:none !important" >
+      <!-- <object type="application/x-shockwave-flash" name="vid" data="http://www.wanmei.com/public/swf/videoplayer.swf" width="688" height="386" id="vid" style="visibility:visible;">
+        <param name="allowfullscreen" value="true">
+        <param name="wmode" value="transparent">
+        <param name="allowscriptaccess" value="always"><param name="bgcolor" value="0x000000">
+        <param name="flashvars" value="__objectID=video&amp;__url=#&amp;playlist=http://huo.dl.hoolaigames.com/huo.flv&amp;autoPlay=true&amp;repeatMode=2&amp;volume=10">
+      </object> -->
+      <embed src="http://player.youku.com/player.php/Type/Folder/Fid/23800702/Ob/1/sid/XMTMzMTE0Nzc3Mg==/v.swf" quality="high" width="688" height="387" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
+      <a class="close_video" href="#">guanbi</a>
+      <script type="text/javascript">
+      addVideoPlayer('vid',688,386,{playlist:'http://player.youku.com/embed/XOTU5OTc3Mjg0', autoPlay:'true', repeatMode:2, volume:10});
+      </script>
+    </div>
+    <div class="touming_bg"></div>  
 </body>
 <script src="js/easy-study.js"></script>
 <script type="text/javascript" src="js/index.js"></script>

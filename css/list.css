@@ -90,15 +90,69 @@ body {
  .side-banner .banner-side1 .ul1{
   height: 290px;
 }
-/* .posts li
+.panel-body .posts  li
 {
-  border-bottom: 1px dotted #000;
+  border-bottom: 1px dotted #e1dcd7;
 }
-.li-s
+/*.li-s
 {
   border-bottom: 1px dotted #000;
 }*/
-.panel-body li
+.w495 .panel-body  li
 {
+  float: left;
+  width: 245px;
+  position: relative;
   border-bottom: 1px solid #e7e2dc;
+}
+.w495 .panel-body .pic
+{
+  margin-left: -5px;
+  margin-top: 5px;
+  height: 165px;
+}
+.w495 .panel-body  ul
+{
+  width: 490px;
+  height: 150px;
+  margin-left: -2px;
+  margin-top: -17px;
+}
+/*.panel-body li
+{
+  float: left;
+  width: 245px;
+  position: relative;
+}*/
+.panel-body  .vid{
+  display: block;
+}
+.panel-body .bd img
+{
+  display: block;
+  border:1px solid #000;
+}
+.panel-body li .info
+{
+  display: block;
+  color: #737888;
+  text-align: center;
+  position: absolute;
+  left: 1px;
+  bottom: 1px;
+  z-index: 2;
+  width: 220px;
+  height: 30px;
+  background:rgba(0,0,0,8);
+}
+
+.w495 .panel-body .play
+{
+  width: 93%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(http://www.9game.cn/public/images/pc/xx/play.png) no-repeat center center;
+  background-color:rgba(0,0,0,0.5);
 }

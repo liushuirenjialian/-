@@ -7,7 +7,7 @@
 }
 
 body {
-  padding: 20px;
+/*  padding: 20px;*/
   text-align: left;
   font-family: Lato;
   color: #fff;
@@ -15,7 +15,7 @@ body {
 }
 
 .tabs {
- 
+  
   float: none;
   list-style: none;
   position: relative;
@@ -87,9 +87,9 @@ body {
     height: 184px;
  text-indent: -9999px;
   }
- .side-banner .banner-side1 .ul1{
+/* .side-banner .banner-side1 .ul1{
   height: 290px;
-}
+}*/
 .panel-body .posts  li
 {
   border-bottom: 1px dotted #e1dcd7;

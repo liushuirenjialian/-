@@ -93,6 +93,7 @@ body {
 .panel-body .posts  li
 {
   border-bottom: 1px dotted #e1dcd7;
+  padding:4.5px;
 }
 /*.li-s
 {

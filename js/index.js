@@ -66,7 +66,7 @@ $(document).ready(function() {
             __arg.forEach(function(str) {
                 var _str = str.substr(3);
                 var __str = _str.substr(0, _str.length - 4)
-                console.log("_str:"+_str+"  --str"+__str)
+                // console.log("_str:"+_str+"  --str"+__str)
                 var redianArg = __str.split('|')
                 posts += '<li><a target="_blank" href="' + redianArg[2] + '">' + redianArg[1] + '</a><span>' + redianArg[0] + '</span></li>';
             })

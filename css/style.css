@@ -820,8 +820,9 @@ body {
 }
 
 .w326 .panel-body {
-  height: 120px;
+  min-height: 140px;
   overflow: hidden;
+  padding: 6px;
 }
 .w326 li {
   height: 25px;
@@ -874,6 +875,9 @@ body {
   line-height: 24px;
   width: 250px;
 /*  border: 1px solid red;*/
+}
+#youqinglianjie li a:hover {
+  color: #E84E03;
 }
 /*攻略资料*/
 #gonglueziliao li span {

@@ -110,6 +110,11 @@ var main =  function() {
     $('.nav-news a').addClass("active");
     $('#page-head').text('游戏资讯');
   }
+   else if (tag === 'ad')
+   {
+     var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=1s_ad&order_by=date&include=title&callback=hahaha';
+    $('#page-head').text('游戏资讯');
+   }
   showContext(getContextUrl, qstr["postId"]);
 }
 main();

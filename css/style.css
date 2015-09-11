@@ -82,10 +82,12 @@ a {
   text-decoration: none;
 }
 
-a:hover,
+/*a:hover,
 a:focus {
   text-decoration: underline;
-}
+  color: red;
+  color: #E84E03;
+}*/
 
 a img {
   border: none;
@@ -378,7 +380,7 @@ hr.hr-sm {
 }
 
 .panel-body {
-  padding: 15px;
+  padding: 6px;
   border: 1px solid #ddd;
   border-top: none;
   *zoom: 1;
@@ -409,6 +411,7 @@ hr.hr-sm {
 
 .panel-heading {
   padding: 10px 15px;
+  position: relative;
   /*
   border-bottom: 1px solid transparent;
   _border-bottom: 1px solid #ddd;
@@ -423,6 +426,7 @@ hr.hr-sm {
   font-size: 16px;
   line-height: 1.2;
   color: inherit;
+  position: relative;
 }
 
 .panel-title a {
@@ -808,4 +812,144 @@ body {
 
 .side-banner2 .banner2{
   height: 360px;
+}
+
+.w326 .panel-body {
+  height: 120px;
+  overflow: hidden;
+}
+.w326 li {
+  height: 25px;
+  font-size: 13px;
+  line-height: 20px;
+}
+.w326 a {
+  color: #737888;
+  line-height: 25px;
+  width: 220px;
+/*  border: 1px solid red;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 13px;
+}
+.w326 a:hover {
+  color: #e84e03;
+}
+.w495 .panel-heading a.more,.w326 .panel-heading a.more {
+  display: inline-block;
+  font-size: 10px;
+  position: absolute;
+  right: 0px;
+  top: 7px;
+  width: 42px;
+  border: none;
+  color: #737888;
+}
+.w495 .panel-heading a.more:hover, .w326 .panel-heading a.more:hover{
+  text-decoration: none;
+  color: #e84e03;
+}
+.w495 .panel-title,.w326 .panel-title {
+  width: 300px;
+  /*border: 1px solid red;*/
+}
+/*友情链接*/
+#youqinglianjie {
+  padding: 2px 5px;
+}
+#youqinglianjie li {
+  font-size: 13px;
+  display: inline;
+  margin-right: 9px;
+}
+#youqinglianjie li a {
+  color: #737888;
+  line-height: 24px;
+  width: 250px;
+/*  border: 1px solid red;*/
+}
+/*攻略资料*/
+#gonglueziliao li span {
+  float: right;
+}
+/*论坛热点*/
+#luntanredian li span {
+  float: right;
+}
+#news_quick li span {
+  float: right;
+}
+
+
+/*gonglueziliao.html*/
+.height-fixed {
+  height: 400px;
+  position: relative;
+}
+
+/*youxizixun.html*/
+
+.tag {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  font-size: 10px;
+  color: #737888;
+}
+
+#post-context li {
+  margin: 0 17px;
+  border-bottom: 1px dotted #cac8c4;
+  position: relative;
+}
+#post-context li a {
+  font-size: 14px;
+  line-height: 35px;
+  color: #737888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-spacing: nowrap;
+}
+#post-context li a:hover {
+  color: #E84E03;
+  text-decoration: none;
+}
+#post-context li span {
+  position: absolute;
+  right: 0;
+  color: #737888;
+  font-size: 14px;
+  line-height: 35px;
+  top: 0;
+}
+/*分页*/
+#pages {
+  height: 430px;
+}
+#pageP, #pageN {
+  cursor: pointer;
+}
+#pagesNav {
+  width: 100%;
+  color: #888;
+  text-align: center;
+  position: absolute;
+  top: 380px;
+
+/*  margin-top: 180px;*/
+}
+
+#pagesNav ul, #pagesNav li {
+  display: inline;
+}
+#pagesNav li {
+  padding: 5px 6px;
+  border-bottom:none; 
+  cursor: pointer;
+}
+.cur {
+  background-color: #6e0d0a;//#4b0f0f;
+  color: #fff;
 }

@@ -125,6 +125,7 @@ function showContext(url, postId) {
     });
 }
 
+// <<<<<<< HEAD
 function ran(len) {
     return (Math.floor(Math.random() * len));
 }
@@ -156,11 +157,41 @@ var main = function() {
         $(".nav-download").siblings().children().removeClass("active");
         $(".nav-download a").addClass("active");
         $("#page-head").text('下载详情');
-    }
+    }else if (tag === 'ad')
+   {
+     var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=1s_ad&order_by=date&include=title&callback=hahaha';
+    $('#page-head').text('游戏资讯');
+   }
     showContext(getContextUrl, qstr["postId"]);
     // $("#post-context li a").click(function () {
     //   console.log("nihao")
     //   showContext(getContextUrl, postId);
     // });
+// =======
+// var main =  function() {
+//   var searchStr = window.location.search;
+//   var qstr = getQueryStringArgs(searchStr);
+//   var requestUrl = 'http://games.hoolai.com/cms/?json=get_post&id='+ qstr["postId"]+'&callback=hahaha';
+//   showPost(requestUrl);
+//   var tag = qstr["tag"];
+//   window.tag = tag;
+//   if (tag === 'gonglueziliao') {
+//     var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_gonglueziliao&order_by=date&include=title&callback=hahaha';
+//     $('.nav-tactic').siblings().children().removeClass("active");
+//     $('.nav-tactic a').addClass("active");
+//     $('#page-head').text('游戏攻略');
+//   }else if (tag === 'news') {
+//     var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_news&order_by=date&include=title&callback=hahaha';
+//     $('.nav-news').siblings().children().removeClass("active");
+//     $('.nav-news a').addClass("active");
+//     $('#page-head').text('游戏资讯');
+//   }
+//    else if (tag === 'ad')
+//    {
+//      var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=1s_ad&order_by=date&include=title&callback=hahaha';
+//     $('#page-head').text('游戏资讯');
+//    }
+//   showContext(getContextUrl, qstr["postId"]);
+// >>>>>>> aa656d039629c327c50c8778ead02c93938d177f
 }
 main();

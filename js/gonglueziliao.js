@@ -49,8 +49,6 @@ $(document).ready(function() {
         }
     })
 })
-
-
 function request(url, cal) {
     $.ajax({
         type: 'GET',

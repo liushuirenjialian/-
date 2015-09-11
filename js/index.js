@@ -297,3 +297,16 @@ function top3(array) {
     }
     return top3Array;
 }
+  /*点击之后play*/
+$(".vid").click(function () {
+  $(".y_vid").attr("style","display:block;");
+  $(".y_vid #vid").attr("style","visibility:visible;");
+  $(".touming_bg").html('    <div id="pop_video2_popwin_bg" style="height: 1133px; opacity: 0.6; width: 100%; z-index: 9999; position: absolute; top: -50px; left: 0px; background: rgb(0, 0, 0);"></div>')
+});
+/*关闭*/
+$(".y_vid .close_video").click(function () {
+  $(".y_vid").attr("style","display:none;");
+  $(".y_vid #vid").attr("style","visibility:hidden;");
+  $(".touming_bg").html('');
+  // $("#pop_video2_popwin_bg").css("display","none");
+});

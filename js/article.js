@@ -159,9 +159,21 @@ var main = function() {
         $("#page-head").text('下载详情');
     }else if (tag === 'ad')
    {
-     var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=1s_ad&order_by=date&include=title&callback=hahaha';
+     var getContextUrl = 'http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_guanggao&order_by=date&include=title&callback=hahaha';
     $('#page-head').text('游戏资讯');
    }
+   else if (tag === 'helper') {
+    $('#page-head').text('新手new');
+   }
+   else if (tag === 'helpe') {
+    $('#page-head').text('公测');
+   }
+   else if (tag === 'servicenter')
+   {
+      $(".nav-service").siblings().children().removeClass("active");
+      $(".nav-service a").addClass("active");
+      $("#page-head").text('客服中心');
+   };
     showContext(getContextUrl, qstr["postId"]);
     // $("#post-context li a").click(function () {
     //   console.log("nihao")

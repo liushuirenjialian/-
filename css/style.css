@@ -431,7 +431,11 @@ hr.hr-sm {
   color: inherit;
   position: relative;
 }
-
+.panel-title i
+{
+  color: #ff3338;
+  font-style: normal;
+}
 .panel-title a {
   color: inherit;
 }

@@ -163,17 +163,29 @@ var main = function() {
     $('#page-head').text('游戏资讯');
    }
    else if (tag === 'helper') {
-    $('#page-head').text('新手new');
+    $('#page-head').text('新手上路');
    }
    else if (tag === 'helpe') {
-    $('#page-head').text('公测');
+    $('#page-head').text('公测助手');
    }
    else if (tag === 'servicenter')
    {
       $(".nav-service").siblings().children().removeClass("active");
       $(".nav-service a").addClass("active");
       $("#page-head").text('客服中心');
-   };
+   }
+   else if (tag === 'zhiyexiangjie') {
+    $("#page-head").text('职业详解');
+   }
+    else if (tag === 'jinengfenxi') {
+        $("#page-head").text('技能分析');
+    }
+    else if (tag === 'zhuansheng') {
+        $("#page-head").text('转生详解');
+    }
+     else if (tag === 'xinshou') {
+        $("#page-head").text('新手相关');
+    }
     showContext(getContextUrl, qstr["postId"]);
     // $("#post-context li a").click(function () {
     //   console.log("nihao")

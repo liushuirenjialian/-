@@ -11,7 +11,7 @@ body {
   text-align: left;
   font-family: Lato;
   color: #fff;
-  background: #9b59b6;
+/*  background: #9b59b6;*/
 }
 
 .tabs {
@@ -176,7 +176,7 @@ body {
   top: 0;
   text-align: -9999px;
 }
-.w220 .panel-body .public-test
+ .public-test
 {
   background: url(../img/btn-test.png) no-repeat;
   width:90px;
@@ -184,7 +184,7 @@ body {
   float: left;
  margin-right:5px;
 }
- .w220 .panel-body .public-new
+ .public-new
  {
    background: url(../img//btn-newbye.png) no-repeat;
    width:90px;

@@ -15,8 +15,8 @@ var youqinglianjie =
 
 var youxixiazai =
     "http://games.hoolai.com/cms/?json=get_category_posts&slug=ls_youxixiazai&include=content&callback=hahaha";
-
-$(document).ready(function() {
+//使用jQuery包装，返回页面上document元素的jQuery包装（构成一个集合）普通的html元素和对象必须经过jquery包装方可调用jQuery库
+$(document).ready(function() {//当整个页面的文档下载完成，但图片等还没有下载后，jquery可以触发一个时间处理函数，或$.ready(function()){}或$(function(){})：：程序员编写的页面装载后的初始化代码
     slide(".banner1", "#banner-side1", ".side-banner1");
     slide(".banner2", "#banner-side2", ".side-banner2");
 
@@ -153,8 +153,8 @@ $(document).ready(function() {
                 var __str = _str.substr(0, _str.length - 4)
                 var redianArg = __str.split('|');
                 var tag = redianArg[1];
-                if (tag === "android") {
-                    $('.download .download_android').attr("href", redianArg[2]);
+                if (tag === "android") {//attr(name,value)设置某元素的name属性为value：attr（name）；获取某元素的name属性值
+                    $('.download .download_android').attr("href", redianArg[2]);//根据元素的id号进行选择，一般仅选择一个
                 } else if (tag === "ios") {
                     $('.download .download_ios').attr("href", redianArg[2]);
                 } else if (tag === "ios_2") {
@@ -302,7 +302,7 @@ $(".vid").click(function () {
   $(".y_vid").attr("style","display:block;");
   $(".y_vid #vid").attr("style","visibility:visible;");
   $(".touming_bg").html('    <div id="pop_video2_popwin_bg" style="height: 1133px; opacity: 0.6; width: 100%; z-index: 9999; position: absolute; top: -50px; left: 0px; background: rgb(0, 0, 0);"></div>')
-});
+});//html()、text():获取或设置元素内部的内容（以纯文本形式）
 /*关闭*/
 $(".y_vid .close_video").click(function () {
   $(".y_vid").attr("style","display:none;");

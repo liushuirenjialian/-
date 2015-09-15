@@ -176,3 +176,7 @@ body {
   top: 0;
   text-align: -9999px;
 }
+.ad-border
+{
+  border:1px solid #000;
+}
